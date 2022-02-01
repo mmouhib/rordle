@@ -1,18 +1,15 @@
 import { wordList } from './static/words';
 import { createGlobalStyle } from 'styled-components';
-import Block from './components/block';
 import styled from 'styled-components';
+import Topbar from './components/topbar';
+import Board from './components/board';
 
 const GlobalStyle = createGlobalStyle`
   body{
     background-color: #121213;
-		display: flex;
-    align-items: center;
-    justify-content: center;
+		font-family: sans-serif;
   }
 	
-	
-  
   *{
     padding: 0;
     margin: 0;
@@ -22,20 +19,17 @@ const GlobalStyle = createGlobalStyle`
 
 const StyledBoard = styled.div`
 	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 `;
 
-function App() {
+export default function App() {
 	return (
 		<StyledBoard>
 			<GlobalStyle />
-			<Block></Block>
-			<Block></Block>
-			<Block></Block>
-			<Block></Block>
-			<Block></Block>
-			<Block></Block>
+			<Topbar />
+			<Board />
 		</StyledBoard>
 	);
 }
-
-export default App;
