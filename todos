@@ -1,0 +1,1 @@
+timer that start when loading the page (one use effect [] ) and resets when resetting the board (and the game (reloading game))

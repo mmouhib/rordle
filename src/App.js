@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import { wordList } from './static/words';
+import { createGlobalStyle } from 'styled-components';
+import Block from './components/block';
+import styled from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
+  body{
+    background-color: #121213;
+		display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+	
+	
+  
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+`;
+
+const StyledBoard = styled.div`
+	display: flex;
+`;
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<StyledBoard>
+			<GlobalStyle />
+			<Block></Block>
+			<Block></Block>
+			<Block></Block>
+			<Block></Block>
+			<Block></Block>
+			<Block></Block>
+		</StyledBoard>
+	);
 }
 
 export default App;
