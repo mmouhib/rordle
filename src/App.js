@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 import styled from 'styled-components';
 import Topbar from './components/topbar';
 import Board from './components/board';
+import Keyboard from './components/keyboard';
 
 const GlobalStyle = createGlobalStyle`
   body{
@@ -30,6 +31,7 @@ export default function App() {
 			<GlobalStyle />
 			<Topbar />
 			<Board />
+			<Keyboard />
 		</StyledBoard>
 	);
 }
