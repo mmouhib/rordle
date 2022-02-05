@@ -1,24 +1,31 @@
 import styled from 'styled-components';
 
 const StyledKey = styled.button`
-	width: 50px;
-	height: 65px;
+	/* width: 50px; */
+	width: 45px;
+	height: 55px;
 	border: 2px solid white;
-	border-radius: 15px;
+	border-radius: 5px;
+	font-weight: bold;
+	color: rgb(0, 0, 0);
+	background-color: lightgrey;
+	font-size: 2rem;
+	cursor: pointer;
+	//flex
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-weight: bolder;
-	color: black;
-	background-color: white;
-	font-size: 2rem;
-	cursor: pointer;
+	/* flex: 1 1 15%; */
 
 	&:hover {
-		background-color: #cbcbcb;
+		background-color: #a8a8a8;
 	}
 `;
 
-export default function KeyboardKey() {
-	return <StyledKey>P</StyledKey>;
+interface props {
+	value: String;
+}
+
+export default function KeyboardKey(props: props) {
+	return <StyledKey>{props.value}</StyledKey>;
 }

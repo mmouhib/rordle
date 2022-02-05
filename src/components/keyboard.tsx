@@ -6,6 +6,8 @@ const StyledKeyboard = styled.div`
 	align-items: center;
 	justify-content: center;
 	gap: 10px;
+	flex-wrap: wrap;
+	width: 50%;
 `;
 
 export default function Keyboard() {
@@ -15,14 +17,11 @@ export default function Keyboard() {
 	}
 	return (
 		<StyledKeyboard>
-			<Key />
-			<Key />
-			<Key />
-			<Key />
-			<Key />
-			<Key />
-			<Key />
-			<Key />
+			{alphabet.map((element, index) => {
+				return <Key value={element} />;
+			})}
+			<Key value='DD' />
+			<Key value='EE' />
 		</StyledKeyboard>
 	);
 }
