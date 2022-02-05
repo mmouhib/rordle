@@ -1,22 +1,25 @@
-import Row from './row';
-import styled from 'styled-components';
+import { StyledBoard, StyledRow, StyledBox } from "../styled.components/board";
 
-const StyledBoard = styled.div`
-display: flex;
-	flex-direction: column;
-  //gap: 0;
-`;
+const Block = () => {
+  return <StyledBox />;
+};
 
+const Row = () => {
+  return (
+    <StyledRow>
+      {[...Array(6)].map((element, index) => (
+        <Block />
+      ))}
+    </StyledRow>
+  );
+};
 
 export default function Board() {
-	return (
-		<StyledBoard>
-			<Row />
-			<Row />
-			<Row />
-			<Row />
-			<Row />
-			<Row />
-		</StyledBoard>
-	);
+  return (
+    <StyledBoard>
+      {[...Array(6)].map((element, index) => (
+        <Row />
+      ))}
+    </StyledBoard>
+  );
 }

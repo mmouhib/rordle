@@ -16,6 +16,15 @@ const StyledBox = styled.div`
 	//border-radius: 5px;
 `;
 
-export default function Block() {
-	return <StyledBox></StyledBox>;
-}
+
+const StyledBoard = styled.div`
+	display: flex;
+	flex-direction: column;
+  //gap: 0;
+`;
+
+
+const StyledRow = styled.div`
+	display: flex;
+	flex-direction: row;
+`;
