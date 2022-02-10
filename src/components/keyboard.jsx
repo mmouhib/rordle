@@ -1,4 +1,7 @@
-import { StyledKey, StyledKeyboard } from "../styled.components/keyboard";
+import {
+  StyledKey,
+  StyledKeyboard,
+} from "../styled.components/keyboard.styled";
 
 interface KeyProps {
   value: String;

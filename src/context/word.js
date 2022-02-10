@@ -1,3 +1,9 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useContext } from "react";
 
-const word  = createContext(null)
+const Context = createContext();
+
+export function ContextProvider({ children }) {
+  const [word, setWord] = useState("mouhib");
+  return <Context.Provider value={word}>{children}</Context.Provider>;
+}
+export default Context;

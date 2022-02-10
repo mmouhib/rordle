@@ -1,4 +1,8 @@
-import { StyledBoard, StyledRow, StyledBox } from "../styled.components/board";
+import {
+  StyledBoard,
+  StyledRow,
+  StyledBox,
+} from "../styled.components/board.styled";
 
 const Block = () => {
   return <StyledBox />;

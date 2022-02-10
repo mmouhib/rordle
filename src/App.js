@@ -1,38 +1,29 @@
-import { wordList } from './static/words';
-import { createGlobalStyle } from 'styled-components';
-import styled from 'styled-components';
-import Topbar from './components/topbar';
-import Board from './components/board';
-import Keyboard from './components/keyboard';
-
-const GlobalStyle = createGlobalStyle`
-  body{
-    background-color: #121213;
-		font-family: sans-serif;
-  }
-	
-  *{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
-`;
-
-const StyledBoard = styled.div`
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	gap: 50px;
-`;
+import { GlobalStyled } from "./styled.components/global.styled";
+import { StyledBoard } from "./styled.components/app.styled";
+import Topbar from "./components/topbar";
+import Board from "./components/board";
+import Keyboard from "./components/keyboard";
+import Context, { ContextProvider } from "./context/word";
+import { useContext, useEffect } from "react";
 
 export default function App() {
-	return (
-		<StyledBoard>
-			<GlobalStyle />
-			<Topbar />
-			<Board />
-			<Keyboard />
-		</StyledBoard>
-	);
+  const word = useContext(Context);
+
+  return (
+    <StyledBoard>
+      <button
+        onClick={() => {
+          console.log(word);
+        }}
+      >
+        one
+      </button>
+      <GlobalStyled />
+      <ContextProvider>
+        <Topbar />
+        <Board />
+        <Keyboard />
+      </ContextProvider>
+    </StyledBoard>
+  );
 }
