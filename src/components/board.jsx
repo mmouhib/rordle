@@ -1,28 +1,15 @@
-import {
-  StyledBoard,
-  StyledRow,
-  StyledBox,
-} from "../styled.components/board.styled";
-
-const Block = () => {
-  return <StyledBox />;
-};
-
-const Row = () => {
-  return (
-    <StyledRow>
-      {[...Array(6)].map((element, index) => (
-        <Block />
-      ))}
-    </StyledRow>
-  );
-};
+import StyledBoard from "../styled.components/board.styled";
+import WordContext from "../context/word";
+import { useContext } from "react";
+import Row from "../components/row";
 
 export default function Board() {
+  const { guesses } = useContext(WordContext);
+
   return (
     <StyledBoard>
       {[...Array(6)].map((element, index) => (
-        <Row />
+        <Row key={index} word={guesses[index]} />
       ))}
     </StyledBoard>
   );
