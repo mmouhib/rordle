@@ -4,3 +4,5 @@ const StyledRow = styled.div`
   display: flex;
   flex-direction: row;
 `;
+
+export default StyledRow;
