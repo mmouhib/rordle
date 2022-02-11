@@ -8,11 +8,23 @@ import { useContext, useEffect } from "react";
 export default function Keyboard() {
   const { word } = useContext(WordContext);
   const { setWord } = useContext(WordContext);
+  const { guesses } = useContext(WordContext);
+  const { setGuesses } = useContext(WordContext);
+  const { row } = useContext(WordContext);
 
   useEffect(() => {
     if (word.length > 5) {
       setWord(word.substr(0, 5));
     }
+
+    setGuesses(
+      guesses.map((element, index) => {
+        if (index === row) {
+          return word;
+        }
+        return element;
+      })
+    );
   }, [setWord, word]);
 
   let alphabet = [];
@@ -22,13 +34,6 @@ export default function Keyboard() {
 
   return (
     <StyledKeyboard>
-      <button
-        onClick={() => {
-          console.log(word);
-        }}
-      >
-        click
-      </button>
       {alphabet.map((element, index) => {
         return (
           <StyledKey
