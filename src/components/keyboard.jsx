@@ -1,7 +1,4 @@
-import {
-  StyledKey,
-  StyledKeyboard,
-} from "../styled.components/keyboard.styled";
+import { StyledKey, StyledKeyboard } from "../styled.components/keyboard.styled";
 import WordContext from "../context/word";
 import { useContext, useEffect } from "react";
 
@@ -11,6 +8,10 @@ export default function Keyboard() {
   const { guesses } = useContext(WordContext);
   const { setGuesses } = useContext(WordContext);
   const { row } = useContext(WordContext);
+  const { setRow } = useContext(WordContext);
+  const { result } = useContext(WordContext);
+  const { setResult } = useContext(WordContext);
+  const { chosenWord } = useContext(WordContext);
 
   useEffect(() => {
     if (word.length > 5) {
@@ -27,10 +28,34 @@ export default function Keyboard() {
     );
   }, [setWord, word]);
 
-  let alphabet = [];
-  for (let i = 65; i <= 90; i++) {
-    alphabet.push(String.fromCharCode(i));
-  }
+  let alphabet = [
+    "q",
+    "w",
+    "e",
+    "r",
+    "t",
+    "y",
+    "u",
+    "i",
+    "o",
+    "p",
+    "a",
+    "s",
+    "d",
+    "f",
+    "g",
+    "h",
+    "j",
+    "k",
+    "l",
+    "z",
+    "x",
+    "c",
+    "v",
+    "b",
+    "n",
+    "m",
+  ];
 
   return (
     <StyledKeyboard>
@@ -40,18 +65,33 @@ export default function Keyboard() {
             key={index}
             onClick={() => {
               setWord(word + element);
-            }}
-          >
+            }}>
             {element}
           </StyledKey>
         );
       })}
-      <StyledKey>♥</StyledKey>
+      <StyledKey
+        onClick={() => {
+          if (word.length === 5) {
+            if (word.toUpperCase() === chosenWord.toUpperCase()) {
+              setResult(1);
+              alert("win");
+            } else {
+              if (row === 5) {
+                setResult(0);
+                alert("loss");
+              }
+            }
+            setRow(row + 1);
+            setWord("");
+          }
+        }}>
+        ♥
+      </StyledKey>
       <StyledKey
         onClick={() => {
           setWord(word.substring(0, word.length - 1));
-        }}
-      >
+        }}>
         ─
       </StyledKey>
     </StyledKeyboard>
