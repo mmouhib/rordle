@@ -14,6 +14,7 @@ const StyledCell = styled.div`
   font-weight: bolder;
   cursor: pointer;
   //border-radius: 5px;
+  user-select: none;
 `;
 
 export default StyledCell;
