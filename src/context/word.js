@@ -1,9 +1,11 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useState } from "react";
 
-const Context = createContext();
+const WordContext = createContext();
 
 export function ContextProvider({ children }) {
-  const [word, setWord] = useState("mouhib");
-  return <Context.Provider value={word}>{children}</Context.Provider>;
+  const [word, setWord] = useState("mouhib ouni");
+  return (
+    <WordContext.Provider value={{ word }}>{children}</WordContext.Provider>
+  );
 }
-export default Context;
+export default WordContext;
