@@ -1,21 +1,15 @@
 import styled from "styled-components";
 
 const StyledKey = styled.button`
-  /* width: 50px; */
-  width: 45px;
-  height: 55px;
-  border: 2px solid white;
-  border-radius: 5px;
-  font-weight: bold;
-  color: rgb(0, 0, 0);
+  width: 20px;
+  height: 45px;
+  border: 1px solid #8d8d8d;
+  border-radius: 7px;
+  text-transform: uppercase;
   background-color: lightgrey;
-  font-size: 2rem;
+  font-size: 100%;
   cursor: pointer;
-  //flex
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* flex: 1 1 15%; */
+  flex: 1 0 9%;
 
   &:hover {
     background-color: #a8a8a8;
@@ -23,12 +17,13 @@ const StyledKey = styled.button`
 `;
 
 const StyledKeyboard = styled.div`
+  margin-top: 8.5vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 5px;
+  width: 40%;
   flex-wrap: wrap;
-  width: 50%;
 `;
 
 export { StyledKey, StyledKeyboard };
