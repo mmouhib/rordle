@@ -14,11 +14,11 @@ const Cell = (props) => {
     <div
       style={{
         textTransform: "uppercase",
-        border: "1px solid #565656",
+        border: "1px solid #6a6a6a",
         color: "lightgrey",
         fontFamily: "sans-serif",
-        width: "60px",
-        height: "60px",
+        width: "70px",
+        height: "70px",
         fontSize: "2.5rem",
         display: "flex",
         alignItems: "center",

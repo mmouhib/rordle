@@ -1,4 +1,5 @@
 import { StyledTopBar, StyledHr } from "../styled.components/topbar.styled";
+import Alert from "./alert";
 
 const styleOne = {
   background: "#b59f3b",
@@ -29,6 +30,7 @@ export default function TopBar() {
         <span style={styleTwo}>E</span>
       </div>
       <StyledHr />
+      <Alert />
     </StyledTopBar>
   );
 }

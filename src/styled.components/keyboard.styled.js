@@ -3,26 +3,37 @@ import styled from "styled-components";
 const StyledKey = styled.button`
   width: 20px;
   height: 45px;
-  border: 1px solid #8d8d8d;
+  border: none;
+  border-right: 5px solid #030303;
+  border-bottom: 5px solid #030303;
   border-radius: 7px;
   text-transform: uppercase;
-  background-color: lightgrey;
-  font-size: 100%;
+  background-color: #1c2223;
+  font-size: 110%;
   cursor: pointer;
   flex: 1 0 9%;
+  color: #70d4fe;
 
   &:hover {
-    background-color: #a8a8a8;
+    background-color: #888888;
+  }
+
+  &:active {
+    border: 0;
   }
 `;
 
 const StyledKeyboard = styled.div`
-  margin-top: 8.5vh;
+  min-width: 400px;
+  background: #323a3b;
+  border-radius: 15px;
+  padding: 15px;
+  //margin-top: 4vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
-  width: 40%;
+  gap: 9px;
+  width: 30%;
   flex-wrap: wrap;
 `;
 

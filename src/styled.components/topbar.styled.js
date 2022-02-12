@@ -10,12 +10,12 @@ const StyledTopBar = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin: 30px 0 70px 0;
+  margin: 30px 0 20px 0;
 `;
 
 const StyledHr = styled.hr`
   width: 50%;
-  margin-top: 10px;
+  margin: 10px 0;
 `;
 
 export { StyledTopBar, StyledHr };
