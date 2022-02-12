@@ -5,8 +5,20 @@ import { useContext, useEffect } from "react";
 // react
 // reels
 
-// compare the chosen word and the user's word and return an array that contains the results
-// 1 = correct location, 2 = false location, 0 = letter does not exist in the original word
+const checkCorrectIndex = (one, two, element) => {
+  for (let i = 0; i < one.length; i++) {
+    if ((one[i] === two[i]) === element) return true;
+  }
+  return false;
+};
+
+/*
+in "differential", we compare the chosen word and the user's word and return an array that contains the results
+1 = correct location, 2 = false location, 0 = letter does not exist in the original word
+
+we use "checkCorrectIndex" to check if the current element of the word will have a true index in the future iterations
+of the word, if so we will make it false (0) even if it is considered true but in different location (2)
+*/
 const differential = (one, two) => {
   let results = [];
   let correctIndex = [];
@@ -17,6 +29,7 @@ const differential = (one, two) => {
       correctIndex.push(one[i]);
     } else {
       if (
+        !checkCorrectIndex(one, two, one[i]) &&
         two.indexOf(one[i]) !== -1 &&
         correctIndex.indexOf(one[i]) === -1 &&
         wrongIndex.indexOf(one[i]) === -1
