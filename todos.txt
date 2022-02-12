@@ -3,3 +3,5 @@ timer that start when loading the page (one use effect [] ) and resets when rese
 add share word graph option
 
 make keyboards buttons rounded
+
+make topbar word ("rordle") look like google's logo when you google wordle

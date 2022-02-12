@@ -2,6 +2,35 @@ import { StyledKey, StyledKeyboard } from "../styled.components/keyboard.styled"
 import WordContext from "../context/word";
 import { useContext, useEffect } from "react";
 
+// react
+// reels
+
+// compare the chosen word and the user's word and return an array that contains the results
+// 1 = correct location, 2 = false location, 0 = letter does not exist in the original word
+const differential = (one, two) => {
+  let results = [];
+  let correctIndex = [];
+  let wrongIndex = [];
+  for (let i = 0; i < one.length; i++) {
+    if (one[i] === two[i]) {
+      results.push(1);
+      correctIndex.push(one[i]);
+    } else {
+      if (
+        two.indexOf(one[i]) !== -1 &&
+        correctIndex.indexOf(one[i]) === -1 &&
+        wrongIndex.indexOf(one[i]) === -1
+      ) {
+        wrongIndex.push(one[i]);
+        results.push(2);
+      } else {
+        results.push(0);
+      }
+    }
+  }
+  return results;
+};
+
 export default function Keyboard() {
   const { word } = useContext(WordContext);
   const { setWord } = useContext(WordContext);
@@ -12,6 +41,8 @@ export default function Keyboard() {
   const { result } = useContext(WordContext);
   const { setResult } = useContext(WordContext);
   const { chosenWord } = useContext(WordContext);
+  const { wordDiff } = useContext(WordContext);
+  const { setWordDiff } = useContext(WordContext);
 
   useEffect(() => {
     if (word.length > 5) {
@@ -70,9 +101,18 @@ export default function Keyboard() {
           </StyledKey>
         );
       })}
+
       <StyledKey
         onClick={() => {
           if (word.length === 5) {
+            setWordDiff(
+              wordDiff.map((element, index) => {
+                if (index === row) {
+                  return differential(word, chosenWord);
+                }
+                return element;
+              })
+            );
             if (word.toUpperCase() === chosenWord.toUpperCase()) {
               setResult(1);
               alert("win");
@@ -88,6 +128,7 @@ export default function Keyboard() {
         }}>
         ♥
       </StyledKey>
+
       <StyledKey
         onClick={() => {
           setWord(word.substring(0, word.length - 1));

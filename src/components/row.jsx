@@ -5,7 +5,7 @@ const Row = (props) => {
   return (
     <StyledRow>
       {[...Array(5)].map((element, index) => (
-        <Cell key={index} value={props.word[index]} />
+        <Cell key={index} value={props.word[index]} pattern={props.pattern[index]} />
       ))}
     </StyledRow>
   );
