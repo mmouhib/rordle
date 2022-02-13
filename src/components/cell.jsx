@@ -14,7 +14,7 @@ const Cell = (props) => {
     <div
       style={{
         textTransform: "uppercase",
-        border: "1px solid #6a6a6a",
+        border: "2px solid #6a6a6a",
         color: "lightgrey",
         fontFamily: "sans-serif",
         width: "70px",

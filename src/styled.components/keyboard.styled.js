@@ -12,7 +12,7 @@ const StyledKey = styled.button`
   font-size: 110%;
   cursor: pointer;
   flex: 1 0 9%;
-  color: #70d4fe;
+  color: white;
 
   &:hover {
     background-color: #888888;
