@@ -9,6 +9,8 @@ export function ContextProvider({ children }) {
   const [guesses, setGuesses] = useState(["", "", "", "", "", ""]);
   const [result, setResult] = useState(2); //0 = loss, 1 = win, 2 = game not finished
   const [wordDiff, setWordDiff] = useState(Array(6).fill([3, 3, 3, 3, 3]));
+  const [alertOpen, setAlertOpen] = useState(false);
+  const [alertValue, setAlertValue] = useState("error");
 
   return (
     <WordContext.Provider
@@ -25,6 +27,10 @@ export function ContextProvider({ children }) {
         setResult,
         wordDiff,
         setWordDiff,
+        alertOpen,
+        setAlertOpen,
+        alertValue,
+        setAlertValue,
       }}>
       {children}
     </WordContext.Provider>

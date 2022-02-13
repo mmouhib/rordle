@@ -28,7 +28,6 @@ const StyledKeyboard = styled.div`
   background: #323a3b;
   border-radius: 15px;
   padding: 15px;
-  //margin-top: 4vh;
   display: flex;
   align-items: center;
   justify-content: center;

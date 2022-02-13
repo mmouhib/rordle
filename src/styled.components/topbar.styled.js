@@ -10,7 +10,7 @@ const StyledTopBar = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin: 30px 0 20px 0;
+  margin: 30px 0 0 0;
 `;
 
 const StyledHr = styled.hr`

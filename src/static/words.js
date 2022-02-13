@@ -20,7 +20,7 @@ export const wordList = [
   "sound",
 ];
 
-export const englishwordList = [
+export const englishWordList = [
   "which",
   "there",
   "their",
