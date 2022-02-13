@@ -11,6 +11,9 @@ export function ContextProvider({ children }) {
   const [wordDiff, setWordDiff] = useState(Array(6).fill([3, 3, 3, 3, 3]));
   const [alertOpen, setAlertOpen] = useState(false);
   const [alertValue, setAlertValue] = useState("error");
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalTitle, setModalTitle] = useState("");
+  const [modalContent, setModalContent] = useState("");
 
   return (
     <WordContext.Provider
@@ -31,6 +34,12 @@ export function ContextProvider({ children }) {
         setAlertOpen,
         alertValue,
         setAlertValue,
+        modalOpen,
+        setModalOpen,
+        modalTitle,
+        setModalTitle,
+        modalContent,
+        setModalContent,
       }}>
       {children}
     </WordContext.Provider>
