@@ -10,26 +10,25 @@ const styleOne = {
 };
 
 const styleTwo = {
-  background: "#538d4e",
-  width: "50px",
-  height: "52px",
-  display: "inline-block",
-  marginLeft: "10px",
-  userSelect: "none",
+   background: "#538d4e",
+   width: "50px",
+   height: "52px",
+   display: "inline-block",
+   marginLeft: "10px",
+   userSelect: "none",
 };
 
+const TitleArray = ['r', 'o', 'r', 'd', 'l', 'e'];
+
 export default function TopBar() {
-  return (
-    <StyledTopBar>
-      <div>
-        <span style={styleOne}>R</span>
-        <span style={styleTwo}>O</span>
-        <span style={styleTwo}>R</span>
-        <span style={styleTwo}>D</span>
-        <span style={styleTwo}>L</span>
-        <span style={styleTwo}>E</span>
-      </div>
-      <StyledHr />
+   return (
+      <StyledTopBar>
+         <div>
+            {TitleArray.map((element, index) => (
+               <span style={index === 0 ? styleOne : styleTwo}>{element}</span>
+            ))}
+         </div>
+         <StyledHr/>
       <Alert />
     </StyledTopBar>
   );
