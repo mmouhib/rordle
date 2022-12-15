@@ -18,4 +18,6 @@ export const englishWordList = [
   "years",
   "place",
   "sound",
+  "ultra",
+  "react",
 ];
